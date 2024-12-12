@@ -3,9 +3,7 @@ function playMusic() {
   const music = document.getElementById('background-music');
   music.play();
 }
-window.addEventListener('DOMContentLoaded', function() {
-  playMusic();
-});
+window.addEventListener('DOMContentLoaded', playMusic);
 document.body.addEventListener('click', playMusic, { once: true });
 const content = document.getElementById('content');
 const footer = document.getElementsByTagName('footer')[0];
@@ -58,6 +56,7 @@ const _slideDua = function () {
       slideSatu.classList.add('d-none');
     }, 1000);
   }, 1000);
+};
 
   slideDua.classList.remove('d-none');
   setTimeout(function () {
@@ -72,7 +71,7 @@ const _slideDua = function () {
       }, 1000);
     })
   }, 40000);
-};
+
 
 const _slideTiga = function () {
   const tap = document.getElementById('tap');
@@ -126,26 +125,30 @@ const _slideEmpat = function () {
 
 const _slideLima = function () {
   const slideLima = document.getElementById('slideLima');
-  slideLima.classList.remove('d-none');
   const trims = document.getElementById('trims');
+  const button = document.getElementById('btn');
 
+  slideLima.classList.remove('d-none');
   setTimeout(() => {
     trims.classList.remove('d-none');
-  }, 1000);
+  }, 2000);
 
-  slideLima.addEventListener('animationend', () => {
-    slideLima.classList.add('animate__delay-3s')
-    slideLima.classList.replace('animate__bounceIn', 'animate__fadeOut');
-    trims.classList.add('animate__animated', 'animate__fadeOut', 'animate__delay-3s');
+  setTimeout(() => {
+    trims.remove();
     setTimeout(() => {
-      trims.remove();
-      setTimeout(() => {
-        slideLima.remove();
-        _slideEnam();
-      }, 1000);
-    }, 6000);
+      slideLima.remove();
+      _slideEnam();
+    }, 2000);
+  }, 22000);
+
+
+  button.addEventListener('click', () => {
+    trims.classList.remove('animate__fadeIn');
+    slideLima.classList.remove('animate__fadeIn');
+    button.classList.add('d-none');
   });
 };
+
 
 const _slideEnam = function () {
   const slideEnam = document.getElementById('slideEnam');
@@ -153,28 +156,56 @@ const _slideEnam = function () {
 };
 
 
+
+
+//kode//
 new TypeIt("#teks1", {
-  strings: ["Hari ini, saya langitkan semua doa terbaik saya untuk kamu.", "Semoga hal-hal yang membuat kamu runtuh turut menjadi alasan kamu untuk tetap tumbuh.", "Semoga dunia senantiasa menjaga kamu dimanapun kamu berada.", "Semoga hari-hari kamu selalu diiringi cinta yang tak pernah ada batasnya." , "Semoga setiap langkahmu dimudahkan hingga tercapai apa yang kamu inginkan."],
+  strings: [
+    "ciee cieee ciiiiieee sahabatku spesial telur 2, lagii ulang tahun nichhh.",
+    "","",
+    "toodayy is as beautiful as other days, but you realize another year has gone in a blink of the eyes.",
+    "tapiii, kamu sadar gaa hari ini sangat istimewa, begitu istimewaa untukmuu.",
+    "that's why let's make it the best celebration everr, everr and everrrr",
+    "akuu membuat semua ini sebagai hadiah ulang tahun untukmuu.",
+    "terima kasih sudah ada, terima kasih untuk persahabatan yang kita buat, terima kasih untuk semuanyaaa."
+  ],
   startDelay: 4000,
   speed: 75,
   waitUntilVisible: true
 }).go();
 
 new TypeIt("#teks2", {
-  strings: ["Dengan ataupun tanpaku, semoga semesta selalu membahagiakan kamu bagimanapun caranya.", " ", "barakallah fi umrik, terima kasih sudah bertahan sampai sejauh ini.", " ", "- Wish all you the best"],
+  strings: [
+   "i wishhh you all the best, may your life be at ease, may all your wishes come true.",
+    "ingatlah semuaa ambisi mu bayanginn kamu seperti burung bebas, terbang di langit biru.", 
+    "sekarang semuanyaa berbeda, cerita baruu hidupmu baru saja akan dimulaiii", 
+    "tapii jangan khawatir karena tuhan, aku dan temen temenmu selalu mendukungmu, dan semoga tahun ini akan lebih baik,amiinnn.",
+    "i hope you'll find happiness along the way.",
+    "senyumm terus yaa, nikmati setiap momen yang kamu alami hari ini ato esook", 
+    "isi dengan senyuman terindahmu dan buat itu menjadi kenangan terbaikk.",
+    "lastly, i'd like to wish you one more time a very happy birthday,",
+    "Happy birthday Ghaitsa Aulia Sakinah Wijaya🎂🎂🎂🥳🥳🥳🥳🎉🎉🎉"
+  ],
   startDelay: 2000,
   speed: 75,
   waitUntilVisible: true
 }).go();
 
 
+
+
 new TypeIt("#trims", {
-  strings: ["Terimakasih."],
+  strings: ["thanksoyyy yaa uda nonton ini smpe akhirr.","jan nangis nangis muluu yaww. Happy birthday ncaa "],
   startDelay: 2000,
-  speed: 150,
+  speed: 100,
   loop: false,
   waitUntilVisible: true,
 }).go();
+
+document.getElementById('btn').addEventListener('click', function () {
+  location.reload();
+});
+
 
 
 
