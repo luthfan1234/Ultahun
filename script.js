@@ -166,7 +166,7 @@ new TypeIt("#teks1", {
     "toodayy is as beautiful as other days, but you realize another year has gone in a blink of the eyes.",
     "tapiii, kamu sadar gaa hari ini sangat istimewa, begitu istimewaa untukmuu.",
     "that's why let's make it the best celebration everr, everr and everrrr",
-    "akuu membuat semua ini sebagai hadiah ulang tahun untukmuu.",
+    "akuu membuat semua ini sebagai ucapan ulang tahun untukmuu. biar kya ocwww",
     "terima kasih sudah ada, terima kasih untuk persahabatan yang kita buat, terima kasih untuk semuanyaaa."
   ],
   startDelay: 4000,
